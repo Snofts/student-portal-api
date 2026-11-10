@@ -1,3 +1,14 @@
+/**
+ * @swagger
+ * /register-admin:
+ *  get:
+ *    summary: Admin route to register a new admin
+ *    responses:
+ *      200:
+ *        description: Successful response array
+ * 
+ */
+
 import express from "express";
 
 const router = express.Router();

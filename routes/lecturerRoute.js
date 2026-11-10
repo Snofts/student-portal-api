@@ -1,3 +1,14 @@
+/**
+ * @swagger
+ * /register-lecturer:
+ *  get:
+ *    summary: Lecturer route to register a new lecturer
+ *    responses:
+ *      200:
+ *      description: Successful response array
+ * 
+ */
+
 import express from "express";
 
 const router = express.Router();

@@ -8,6 +8,11 @@ import { connectToDb } from "./config/db.js";
 import {studentRoute} from "./routes/studentRoute.js";
 import {lecturerRoute} from "./routes/lecturerRoute.js";
 import { loginRoute } from "./routes/loginRoute.js";
+import swaggerUi from "swagger-ui-express";
+import swaggerSpec from "./swagger.js";
+import { adminRoute } from "./routes/adminRoute.js";
+
+
 
 dotenv.config();
 
@@ -17,6 +22,9 @@ const port = process.env.PORT;
 
 
 app.use(express.json());
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
 
 app.get("/", (req, res) => {
   console.log(req);
@@ -28,6 +36,8 @@ app.use("/api", studentRoute)
 app.use("/api", lecturerRoute)
 
 app.use("/api", loginRoute)
+
+app.use("/api", adminRoute)
 
 // Connect to mongodb and start the server
 
